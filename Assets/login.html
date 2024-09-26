@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tchê Orienta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="logo">
+                <img src="/img/Ativo 4.svg" alt="logo" class="icon" />
+            </div>
+            <p class="slogan">Explore a cidade com o Tchê Orienta</p>
+            <div class="form-background">
+                <form action="#" class="login-form">
+                    <label for="email">Gmail:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Exemplo: Gabriela@gmail.com"
+                        required
+                    />
+                    <label for="password">Senha:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Insira sua senha aqui!"
+                        required
+                    />
+                    <div class="options">
+                        <label><input type="checkbox" /> Lembrar senha</label>
+                        <a href="#" style="color: white">Esqueci minha senha</a>
+                    </div>
+                    <button type="submit">Entrar</button>
+                    <a href="#" class="create-account">Criar uma conta</a>
+                </form>
+            </div>
+        </div>
+
+        <div id="map"></div>
+        
+        <!-- Imagem do gaúcho -->
+        <div class="gaucho-image">
+            <img class="gaucho-image" src="/img/Ativo 6.svg" alt="Gaucho" width="500" height="auto">
+        </div>
+    </div>
+
+    <!-- Script do Leaflet para o mapa -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Inicializa o mapa
+        var map = L.map("map").setView([-30.0346, -51.2177], 12); // Coordenadas de Porto Alegre
+
+        // Adiciona o tile layer do OpenStreetMap
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        // Adiciona um marcador em Porto Alegre
+        L.marker([-30.0346, -51.2177])
+            .addTo(map)
+            .bindPopup("Porto Alegre, RS")
+            .openPopup();
+    </script>
+</body>
+</html>
