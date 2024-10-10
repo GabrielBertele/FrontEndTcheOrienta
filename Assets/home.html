@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tchê Ofertas</title>
+    <link rel="stylesheet" href="home.css">
+    <!-- Incluindo o CSS do Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Incluindo o Font Awesome para o ícone de lupa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="Pesquise no Tchê orienta">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="restaurant-list">
+                <div class="restaurant">
+                    <div class="placeholder">
+                    </div>
+                    <p>Pioneiro Restaurante</p>
+                </div>
+                <div class="restaurant">
+                    <div class="placeholder"></div>
+                    <p>Bistrô</p>
+                </div>
+                <div class="restaurant">
+                    <div class="placeholder"></div>
+                    <p>Outback</p>
+                </div>
+            </div>
+        </div>
+        <div id="map" style="height: 100vh;"></div> <!-- Define a altura do mapa -->
+    </div>
+
+    <!-- Incluindo o script do Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Inicializa o mapa
+        var map = L.map("map").setView([-30.0346, -51.2177], 12); // Coordenadas de Porto Alegre
+
+        // Adiciona o tile layer do OpenStreetMap
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        // Adiciona um marcador em Porto Alegre
+        L.marker([-30.0346, -51.2177])
+            .addTo(map)
+            .bindPopup("Porto Alegre, RS")
+            .openPopup();
+    </script>
+</body>
+</html>
