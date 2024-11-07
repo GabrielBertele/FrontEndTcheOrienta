@@ -24,4 +24,4 @@ window.addEventListener("click", (event) => {
         popup.style.display = "none";
         container.classList.remove("blur"); // Remove o blur do fundo
     }
-});
+}); 

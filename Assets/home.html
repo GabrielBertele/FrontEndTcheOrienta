@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tchê Ofertas</title>
+    <title>Tchê Orienta</title>
     <link rel="stylesheet" href="home.css">
     <!-- Incluindo o CSS do Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -35,7 +35,6 @@
         <div id="map" style="height: 100vh;"></div> <!-- Define a altura do mapa -->
     </div>
 
-    <!-- Pop-up Modal -->
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close-btn">&times;</span>
@@ -45,13 +44,13 @@
     </div>
 
     <!-- Incluindo o script do Leaflet -->
+     <script src="/JS/script.js"></script>
     <script src="/FrontEndTcheOrienta-main/JS/script.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
         // Inicializa o mapa
         var map = L.map("map").setView([-30.0346, -51.2177], 12); // Coordenadas de Porto Alegre
 
-        // Adiciona o tile layer do OpenStreetMap
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         }).addTo(map);
